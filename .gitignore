@@ -1,0 +1,12 @@
+# VS Code SFTP settings (contains FTP account name)
+.vscode/
+
+# Local backup of the pre-2026 site
+_backup/
+
+# StarServer-only redirect files (not part of the GitHub Pages site)
+_starserver_redirect/
+
+# OS cruft
+.DS_Store
+Thumbs.db

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motoshige Sato | 佐藤元重</title>
+<meta name="description" content="Motoshige Sato (佐藤元重) — Postdoctoral Scholar, Chang Lab, UCSF. Brain-Computer Interfaces, speech decoding, and intelligence augmentation.">
+<meta property="og:title" content="Motoshige Sato | 佐藤元重">
+<meta property="og:description" content="Postdoctoral Scholar, Chang Lab, UCSF — Brain–Computer Interfaces and speech decoding.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="face.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129504;</text></svg>">
+<style>
+:root{
+  --bg:#fbfbfd; --bg-soft:#ffffff; --bg-sunk:#f2f3f7;
+  --fg:#16181d; --fg-muted:#5b6273; --fg-faint:#8b93a7;
+  --line:#e3e6ee; --line-strong:#cfd4e2;
+  --accent:#2f5bd7; --accent-soft:#eaf0ff; --accent-fg:#1f47b5;
+  --gold:#a77c1a; --gold-soft:#fdf4df;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(18,22,38,.05),0 8px 24px -12px rgba(18,22,38,.18);
+  --maxw:1080px;
+  --sans:"Inter","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic UI","Meiryo",sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Georgia,"Yu Mincho",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0e1016; --bg-soft:#151922; --bg-sunk:#1b202b;
+    --fg:#e8ebf2; --fg-muted:#a4acbe; --fg-faint:#79819a;
+    --line:#252b38; --line-strong:#333b4d;
+    --accent:#5f83f0; --accent-soft:#1a2340; --accent-fg:#9db4ff;
+    --gold:#e0b95c; --gold-soft:#2a2312;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font-family:var(--sans);font-size:16px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+html[data-lang="en"] [data-l="ja"]{display:none !important}
+html[data-lang="ja"] [data-l="en"]{display:none !important}
+a{color:var(--accent-fg);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ---------- header ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .topbar{
+    background:color-mix(in srgb,var(--bg) 82%,transparent);
+    backdrop-filter:saturate(180%) blur(14px);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+  }
+}
+.topbar .wrap{display:flex;align-items:center;gap:16px;height:62px}
+.brand{font-weight:650;letter-spacing:-.01em;font-size:15px;color:var(--fg);white-space:nowrap}
+.brand:hover{text-decoration:none}
+.nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.nav a{
+  font-size:13.5px;color:var(--fg-muted);padding:7px 11px;border-radius:999px;
+  transition:background .15s,color .15s;white-space:nowrap;
+}
+.nav a:hover{background:var(--bg-sunk);color:var(--fg);text-decoration:none}
+.nav a.active{color:var(--accent-fg);background:var(--accent-soft)}
+.langtoggle{
+  display:inline-flex;align-items:center;background:var(--bg-sunk);
+  border:1px solid var(--line);border-radius:999px;padding:2px;flex:none;margin-left:auto;
+}
+.nav + .langtoggle{margin-left:0}
+.langtoggle button{
+  font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.02em;
+  border:0;background:transparent;color:var(--fg-muted);
+  padding:5px 12px;border-radius:999px;cursor:pointer;transition:.15s;
+}
+.langtoggle button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.langtoggle button:hover:not([aria-pressed="true"]){color:var(--fg)}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 56px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:48px;align-items:center}
+.eyebrow{
+  display:inline-block;font-size:12px;font-weight:650;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--accent-fg);background:var(--accent-soft);
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+h1{
+  font-family:var(--serif);font-weight:600;letter-spacing:-.02em;
+  font-size:clamp(2.2rem,5.4vw,3.4rem);line-height:1.1;margin:0 0 6px;
+}
+.subname{font-size:1.05rem;color:var(--fg-faint);margin:0 0 20px;font-weight:500}
+.lede{font-size:1.06rem;color:var(--fg-muted);margin:0 0 12px;max-width:62ch}
+.lede strong{color:var(--fg);font-weight:600}
+.portrait{
+  width:200px;height:200px;border-radius:50%;object-fit:cover;
+  border:1px solid var(--line);box-shadow:var(--shadow);justify-self:end;
+}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:13.5px;font-weight:550;color:var(--fg);
+  background:var(--bg-soft);border:1px solid var(--line);
+  padding:8px 14px;border-radius:999px;box-shadow:var(--shadow);
+  transition:transform .15s,border-color .15s;
+}
+.chip:hover{text-decoration:none;transform:translateY(-1px);border-color:var(--line-strong)}
+.chip svg{width:15px;height:15px;fill:currentColor;opacity:.7}
+
+/* ---------- sections ---------- */
+section{padding:52px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px;flex-wrap:wrap}
+h2{font-family:var(--serif);font-size:1.65rem;font-weight:600;letter-spacing:-.015em;margin:0}
+.sec-note{font-size:13px;color:var(--fg-faint)}
+h3{
+  font-size:.8rem;font-weight:680;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--fg-faint);margin:34px 0 14px;
+}
+h3:first-of-type{margin-top:0}
+
+/* ---------- timeline ---------- */
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 22px 34px}
+.timeline li::before{
+  content:"";position:absolute;left:2px;top:9px;width:11px;height:11px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--line-strong);
+}
+.timeline li.now::before{background:var(--accent);border-color:var(--accent)}
+.when{display:block;font-size:12.5px;font-weight:650;letter-spacing:.03em;color:var(--accent-fg);margin-bottom:1px}
+.what{display:block;color:var(--fg)}
+.where{color:var(--fg-muted)}
+
+/* ---------- publications ---------- */
+.pubs{list-style:none;margin:0;padding:0}
+.pubs li{
+  padding:15px 0;border-bottom:1px solid var(--line);
+  font-size:15px;line-height:1.65;color:var(--fg-muted);
+}
+.pubs li:last-child{border-bottom:0}
+.pubs .me{font-style:normal;font-weight:680;color:var(--fg)}
+.pubs .venue{font-style:italic;color:var(--fg)}
+.tag{
+  display:inline-flex;align-items:center;font-size:11.5px;font-weight:620;
+  letter-spacing:.02em;padding:2px 9px;border-radius:999px;margin-left:6px;
+  border:1px solid var(--line);background:var(--bg-soft);color:var(--fg-muted);
+  vertical-align:1px;white-space:nowrap;
+}
+a.tag:hover{border-color:var(--accent);color:var(--accent-fg);text-decoration:none;background:var(--accent-soft)}
+.tag.oral{border-color:transparent;background:var(--accent-soft);color:var(--accent-fg)}
+.tag.poster{border-color:transparent;background:var(--bg-sunk);color:var(--fg-muted)}
+.tag.prize{border-color:transparent;background:var(--gold-soft);color:var(--gold)}
+
+/* ---------- cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;box-shadow:var(--shadow);
+}
+.card .when{margin-bottom:6px}
+.card p{margin:0;font-size:14.5px;color:var(--fg-muted)}
+.card .hl{color:var(--fg);font-weight:600}
+
+/* ---------- plain lists ---------- */
+.plain{list-style:none;margin:0;padding:0}
+.plain li{
+  display:grid;grid-template-columns:142px minmax(0,1fr);gap:18px;
+  padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;
+}
+.plain li:last-child{border-bottom:0}
+.plain .when{margin:0;padding-top:1px}
+.plain .body{color:var(--fg-muted)}
+.plain .body strong{color:var(--fg);font-weight:600}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--line);padding:34px 0 56px;
+  font-size:13px;color:var(--fg-faint);display:flex;gap:16px;
+  flex-wrap:wrap;align-items:center;justify-content:space-between;
+}
+.totop{color:var(--fg-muted)}
+
+@media (max-width:760px){
+  .hero{padding:44px 0 36px}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .portrait{width:132px;height:132px;justify-self:start;order:-1}
+  .nav{display:none}
+  .plain li{grid-template-columns:1fr;gap:2px}
+  .topbar .wrap{height:56px}
+  section{padding:40px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Motoshige&nbsp;Sato</a>
+    <nav class="nav" id="nav">
+      <a href="#about"><span data-l="en">About</span><span data-l="ja">概要</span></a>
+      <a href="#career"><span data-l="en">Career</span><span data-l="ja">経歴</span></a>
+      <a href="#publications"><span data-l="en">Publications</span><span data-l="ja">研究業績</span></a>
+      <a href="#talks"><span data-l="en">Talks</span><span data-l="ja">学会発表</span></a>
+      <a href="#awards"><span data-l="en">Awards</span><span data-l="ja">受賞・資金</span></a>
+      <a href="#outreach"><span data-l="en">Outreach</span><span data-l="ja">対外活動</span></a>
+    </nav>
+    <div class="langtoggle" role="group" aria-label="Language / 言語">
+      <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+      <button type="button" data-setlang="ja" aria-pressed="false">日本語</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow"><span data-l="en">Postdoctoral Scholar · Chang Lab, UCSF</span><span data-l="ja">Postdoctoral Scholar · UCSF Chang Lab</span></span>
+      <h1><span data-l="en">Motoshige Sato</span><span data-l="ja">佐藤 元重</span></h1>
+      <p class="subname"><span data-l="en">佐藤 元重 · Ph.D. in Pharmaceutical Sciences</span><span data-l="ja">Motoshige Sato · 薬科学博士</span></p>
+      <p class="lede" data-l="en">I work on <strong>intelligence augmentation through the fusion of brains and artificial intelligence</strong>. I am a Postdoctoral Scholar in the <a href="https://changlab.ucsf.edu/" target="_blank" rel="noopener">Chang Lab at UCSF</a>, working on Brain&ndash;Computer Interfaces for speech. Previously I led large-scale, non-invasive speech decoding from EEG at <a href="https://www.araya.org/" target="_blank" rel="noopener">Araya Inc.</a></p>
+      <p class="lede" data-l="ja">私は<strong>脳と人工知能の融合による知能拡張</strong>に興味があり、現在<a href="https://changlab.ucsf.edu/" target="_blank" rel="noopener">UCSF Chang Lab</a>のPostdoctoral Scholarとして、発話のためのBrain&ndash;Computer Interfaceの研究に取り組んでいます。以前は<a href="https://www.araya.org/" target="_blank" rel="noopener">株式会社アラヤ</a>で、大規模データを用いた非侵襲脳波からの音声デコーディングを推進していました。</p>
+      <div class="links">
+        <a class="chip" href="https://scholar.google.com/citations?user=72gm9BQAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 8.5l11 6.5 9-5.32V17h2V8.5L12 2z"/><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+          Google Scholar</a>
+        <a class="chip" href="https://github.com/Motoshige496" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.24a11.4 11.4 0 0 1 6 0c2.3-1.56 3.3-1.24 3.3-1.24.66 1.66.24 2.88.12 3.18.77.84 1.24 1.92 1.24 3.24 0 4.63-2.8 5.65-5.48 5.95.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 12 .5z"/></svg>
+          GitHub</a>
+        <a class="chip" href="https://twitter.com/Motoshige_Sato" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-7.3L5.9 22H2.8l7.5-8.6L2.4 2h6.6l4.5 6.6L18.9 2zm-1.1 18.2h1.7L7.3 3.7H5.5l12.3 16.5z"/></svg>
+          X / Twitter</a>
+        <a class="chip" href="https://scrapbox.io/phoenix20140310-40504414/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h11l5 5v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm10 1.5V9h4.5L14 4.5zM6.5 12h11v1.6h-11V12zm0 3.4h11V17h-11v-1.6z"/></svg>
+          <span data-l="en">Paper notes</span><span data-l="ja">論文紹介</span></a>
+      </div>
+    </div>
+    <img class="portrait" src="face.jpg" alt="Motoshige Sato" width="200" height="200">
+  </div>
+</div>
+
+<section id="about" class="wrap">
+  <div class="sec-head">
+    <h2><span data-l="en">About</span><span data-l="ja">概要</span></h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <span class="when"><span data-l="en">RESEARCH</span><span data-l="ja">研究</span></span>
+      <p data-l="en"><span class="hl">Brain&ndash;Computer Interfaces.</span> Speech neuroprosthetics, non-invasive speech decoding from EEG, scaling laws in neural data, and the physiological origins of decodable signals.</p>
+      <p data-l="ja"><span class="hl">Brain&ndash;Computer Interface。</span>発話ニューロプロステーシス、脳波からの非侵襲音声デコーディング、神経データにおけるスケーリング則、デコード可能な信号の生理学的起源。</p>
+    </div>
+    <div class="card">
+      <span class="when"><span data-l="en">BACKGROUND</span><span data-l="ja">バックグラウンド</span></span>
+      <p data-l="en"><span class="hl">Pharmaceutical sciences &amp; neurophysiology.</span> Ph.D. from the University of Tokyo &mdash; in vivo electrophysiology in rodents, combined with deep learning.</p>
+      <p data-l="ja"><span class="hl">薬科学・神経生理学。</span>東京大学で博士号を取得。げっ歯類のin vivo電気生理と深層学習を組み合わせた研究に従事。</p>
+    </div>
+    <div class="card">
+      <span class="when"><span data-l="en">COMMUNITY</span><span data-l="ja">コミュニティ</span></span>
+      <p data-l="en"><span class="hl">Former President</span> of the <a href="http://brainsci.jp/" target="_blank" rel="noopener">Brain Science Young Researchers' Association</a>, organising schools and workshops for early-career neuroscientists.</p>
+      <p data-l="ja"><span class="hl">元会長</span>：<a href="http://brainsci.jp/" target="_blank" rel="noopener">脳科学若手の会</a>。若手研究者向けの研究会・ワークショップを企画・運営。</p>
+    </div>
+  </div>
+</section>
+
+<section id="career" class="wrap">
+  <div class="sec-head">
+    <h2><span data-l="en">Career</span><span data-l="ja">経歴</span></h2>
+  </div>
+  <ul class="timeline">
+    <li class="now">
+      <span class="when">2026.09 &mdash;</span>
+      <span class="what" data-l="en"><strong>Postdoctoral Scholar</strong>, <span class="where"><a href="https://changlab.ucsf.edu/" target="_blank" rel="noopener">Chang Lab</a>, University of California, San Francisco</span></span>
+      <span class="what" data-l="ja"><strong>Postdoctoral Scholar</strong>、<span class="where"><a href="https://changlab.ucsf.edu/" target="_blank" rel="noopener">UCSF Chang Lab</a>（カリフォルニア大学サンフランシスコ校）</span></span>
+    </li>
+    <li>
+      <span class="when">2025.09 &mdash; 2026.08</span>
+      <span class="what" data-l="en">Visiting Scholar, <span class="where"><a href="https://changlab.ucsf.edu/" target="_blank" rel="noopener">Chang Lab</a>, University of California, San Francisco</span></span>
+      <span class="what" data-l="ja">Visiting Scholar、<span class="where"><a href="https://changlab.ucsf.edu/" target="_blank" rel="noopener">UCSF Chang Lab</a></span></span>
+    </li>
+    <li>
+      <span class="when">2023.04 &mdash; 2025.08</span>
+      <span class="what" data-l="en">Senior Researcher, <span class="where">Araya Inc.</span></span>
+      <span class="what" data-l="ja">Senior Researcher、<span class="where">株式会社アラヤ</span></span>
+    </li>
+    <li>
+      <span class="when">2021.10 &mdash; 2022.03</span>
+      <span class="what" data-l="en">Visiting Researcher, <span class="where">Araya Inc.</span></span>
+      <span class="what" data-l="ja">客員研究員、<span class="where">株式会社アラヤ</span></span>
+    </li>
+    <li>
+      <span class="when">2021.05 &mdash; 2021.10</span>
+      <span class="what" data-l="en">Research Internship, <span class="where">Araya Inc.</span></span>
+      <span class="what" data-l="ja">インターンシップ、<span class="where">株式会社アラヤ</span></span>
+    </li>
+    <li>
+      <span class="when">2023.03</span>
+      <span class="what" data-l="en"><strong>Ph.D. in Pharmaceutical Sciences</strong>, <span class="where">Graduate School of Pharmaceutical Sciences, The University of Tokyo</span></span>
+      <span class="what" data-l="ja"><strong>博士課程 修了</strong>、<span class="where">東京大学大学院薬学系研究科 薬科学専攻</span></span>
+    </li>
+    <li>
+      <span class="when">2020.03</span>
+      <span class="what" data-l="en">M.S., <span class="where">Graduate School of Pharmaceutical Sciences, The University of Tokyo</span></span>
+      <span class="what" data-l="ja">修士課程 修了、<span class="where">東京大学大学院薬学系研究科 薬科学専攻</span></span>
+    </li>
+    <li>
+      <span class="when">2018.03</span>
+      <span class="what" data-l="en">B.S., <span class="where">Faculty of Pharmaceutical Sciences, The University of Tokyo</span></span>
+      <span class="what" data-l="ja">卒業、<span class="where">東京大学薬学部 薬科学科</span></span>
+    </li>
+    <li>
+      <span class="when">2014.04</span>
+      <span class="what" data-l="en">Entered <span class="where">The University of Tokyo, College of Arts and Sciences (Natural Sciences II)</span></span>
+      <span class="what" data-l="ja">入学、<span class="where">東京大学教養学部 理科二類</span></span>
+    </li>
+  </ul>
+</section>
+
+<section id="publications" class="wrap">
+  <div class="sec-head">
+    <h2><span data-l="en">Publications</span><span data-l="ja">研究業績</span></h2>
+    <span class="sec-note"><span data-l="en">Bold name = author</span><span data-l="ja">太字は本人</span></span>
+  </div>
+
+  <h3><span data-l="en">Journal articles &amp; preprints</span><span data-l="ja">学術雑誌等に発表した論文、著書</span></h3>
+  <ul class="pubs">
+    <li>Inoue, M., <em class="me">Sato, M.</em>, Tomeoka, K., Nah, N., Hatakeyama, E., Arulkumaran, K., Horiguchi, I., Sasai, S. A silent speech decoding system from EEG and EMG with heterogenous electrode configurations. <span class="venue">Interspeech 2025</span>, 5603&ndash;5607, 2025.
+      <a class="tag" href="https://www.isca-archive.org/interspeech_2025/inoue25b_interspeech.html" target="_blank" rel="noopener">link</a><a class="tag" href="https://lp.araya.org/posts/20250623" target="_blank" rel="noopener"><span data-l="en">press</span><span data-l="ja">解説記事</span></a></li>
+    <li><em class="me">Sato, M.</em>, Tomeoka, K., Horiguchi, I., Arulkumaran, K., Kanai, R., Sasai, S. Scaling law in neural data: non-invasive speech decoding with 175 hours of EEG data. <span class="venue">arXiv preprint</span> arXiv:2407.07595, 2024.
+      <a class="tag" href="https://arxiv.org/abs/2407.07595" target="_blank" rel="noopener">link</a><a class="tag" href="https://www.araya.org/publications/news20240716/" target="_blank" rel="noopener"><span data-l="en">press</span><span data-l="ja">解説記事</span></a></li>
+    <li>Arulkumaran, K., Di Vincenzo, M., Dossa, R.F.J., Akiyama, S., Lillrank, D.O., <em class="me">Sato, M.</em>, Tomeoka, K., Sasai, S. A comparison of visual and auditory EEG interfaces for robot multi-stage task control. <span class="venue">Frontiers in Robotics and AI</span>, 11, 1329270, 2024.
+      <a class="tag" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1329270/full" target="_blank" rel="noopener">link</a><a class="tag" href="https://www.araya.org/publications/news20230728/" target="_blank" rel="noopener"><span data-l="en">press</span><span data-l="ja">解説記事</span></a></li>
+    <li><em class="me">Sato, M.</em>, Kabe, Y., Nobe, S., Yoshida, A., Inoue, M., Simizu, M., Tomeoka, K., Sasai, S. Delineating neural contributions to electroencephalogram-based speech decoding. <span class="venue">bioRxiv</span> 2024.05.09.591996, 2024.
+      <a class="tag" href="https://www.biorxiv.org/content/10.1101/2024.05.09.591996v2" target="_blank" rel="noopener">link</a><a class="tag" href="https://www.araya.org/publications/news20230512/" target="_blank" rel="noopener"><span data-l="en">press</span><span data-l="ja">解説記事</span></a></li>
+    <li>Ogasawara, J., Ikenoue, S., Yamamoto, H., <em class="me">Sato, M.</em>, Kasuga, Y., Mitsukura, Y., Ikegaya, Y., Yasui, M., Tanaka, M., Ochiai, D. Deep neural network-based classification of cardiotocograms outperformed conventional algorithms. <span class="venue">Scientific Reports</span>, 11, 13367, 2021.
+      <a class="tag" href="https://www.nature.com/articles/s41598-021-92805-9" target="_blank" rel="noopener">link</a></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Noguchi, A., Gao, M., Ouchi, A., Ikegaya, Y. Amplitude estimation of synaptic inputs using deep learning. <span class="venue">IEICE Technical Report</span>, 118(414), 17&ndash;21, 2019. <span class="tag">in Japanese</span></span><span data-l="ja"><em class="me">佐藤元重</em>、野口朝子、高夢璇、大内彩子、池谷裕二、深層学習を用いたシナプス入力の振幅推定、<span class="venue">電子情報通信学会技術研究報告</span>、118(414), 17&ndash;21, 2019.</span>
+      <a class="tag" href="https://www.ieice.org/publications/ken/summary.php?contribution_id=99745" target="_blank" rel="noopener">link</a></li>
+    <li><em class="me">Sato, M.</em>, Matsumoto, N., Noguchi, A., Okonogi, T., Sasaki, T., Ikegaya, Y. Simultaneous monitoring of mouse respiratory and cardiac rates through a single precordial electrode. <span class="venue">Journal of Pharmacological Sciences</span>, 137, 177&ndash;186, 2018.
+      <a class="tag" href="https://www.sciencedirect.com/science/article/pii/S1347861318301117?via%3Dihub" target="_blank" rel="noopener">link</a></li>
+  </ul>
+
+  <h3><span data-l="en">Reviews &amp; society reports</span><span data-l="ja">学術雑誌における総説</span></h3>
+  <ul class="pubs">
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Sakamoto, T., Ishibashi, K., Kobayashi, K., Sato, Y., Shimanuki, Y., Sugimoto, S., Sugita, Y., Noyama, H., Yamashita, A. Report on the 14th Spring Meeting of the Brain Science Young Researchers' Association. <span class="venue">The Brain &amp; Neural Networks (JNNS)</span>, 29(2), 95&ndash;101, 2022. <span class="tag">in Japanese</span></span><span data-l="ja"><em class="me">佐藤元重</em>、坂本嵩、石橋佳奈、小林憲司、佐藤由宇、嶋貫悠、杉本翔哉、杉田祐輔、野山大樹、山下愛博、2022年度時限研究会実施報告　脳科学若手の会第14回 春の研究会、<span class="venue">日本神経回路学会誌</span>、29(2), 95&ndash;101, 2022.</span>
+      <a class="tag" href="https://www.jstage.jst.go.jp/article/jnns/29/2/29_95/_pdf/-char/ja" target="_blank" rel="noopener">link</a></li>
+    <li><span data-l="en">Kobayashi, K., Sakamoto, T., <em class="me">Sato, M.</em>, Sato, Y., Sugimoto, S., Nakata, Y., Noyama, H., Yamashita, A. Report on the 13th Spring Meeting of the Brain Science Young Researchers' Association. <span class="venue">The Brain &amp; Neural Networks (JNNS)</span>, 28(2), 103&ndash;108, 2021. <span class="tag">in Japanese</span></span><span data-l="ja">小林憲司、坂本嵩、<em class="me">佐藤元重</em>、佐藤由宇、杉本翔哉、中田康史、野山大樹、山下愛博、2021年度時限研究会実施報告　脳科学若手の会第13回 春の研究会、<span class="venue">日本神経回路学会誌</span>、28(2), 103&ndash;108, 2021.</span>
+      <a class="tag" href="https://www.jstage.jst.go.jp/article/jnns/28/2/28_103/_pdf/-char/en" target="_blank" rel="noopener">link</a></li>
+    <li><span data-l="en">Kawabata, M., Koyama, Y., Sakamoto, T., <em class="me">Sato, M.</em>, Sato, Y., Takagi, S., Nagano, Y., Misu, H., Yagi, S., Yamashita, A. Report on the 11th Camp of the Brain Science Young Researchers' Association. <span class="venue">The Brain &amp; Neural Networks (JNNS)</span>, 26(3), 105&ndash;109, 2019. <span class="tag">in Japanese</span></span><span data-l="ja">川端政則、小山雄太郎、坂本嵩、<em class="me">佐藤元重</em>、佐藤由宇、高木志郎、長野祥大、三須宏武、八木佐一郎、山下愛博、2019年度時限研究会実施報告　脳科学若手の会第11回合宿、<span class="venue">日本神経回路学会誌</span>、26(3), 105&ndash;109, 2019.</span>
+      <a class="tag" href="https://www.jstage.jst.go.jp/article/jnns/26/3/26_105/_pdf/-char/ja" target="_blank" rel="noopener">link</a></li>
+    <li>Gao, M., <em class="me">Sato, M.</em>, Ikegaya, Y. Machine learning-based prediction of seizure-inducing action as an adverse drug effect. <span class="venue">Yakugaku Zasshi</span>, 138, 809&ndash;813, 2018.</li>
+  </ul>
+</section>
+
+<section id="talks" class="wrap">
+  <div class="sec-head">
+    <h2><span data-l="en">Conference presentations</span><span data-l="ja">学会発表</span></h2>
+  </div>
+
+  <h3><span data-l="en">International conferences</span><span data-l="ja">国際会議における発表</span></h3>
+  <ul class="pubs">
+    <li><em class="me">Sato, M.</em>, Tomeoka, K., Horiguchi, I., Arulkumaran, K., Kanai, R., Sasai, S. Data-driven scaling performance in EEG-based speech decoding. <span class="venue">11th International BCI Meeting 2025</span>, Canada, W21.<span class="tag oral"><span data-l="en">Oral</span><span data-l="ja">口頭発表</span></span></li>
+    <li>Komatsu, M., <em class="me">Sato, M.</em>, Yoshida, A., Tsunada, J., Sasai, S. The whole-cortical ECoG reveals association cortices contribute multimodal intentional decoding. <span class="venue">10th International BCI Meeting 2023</span>, Belgium, 144487, June 2023.<span class="tag oral"><span data-l="en">Oral (co-author)</span><span data-l="ja">口頭発表（共著）</span></span></li>
+    <li><em class="me">Sato, M.</em>, Matsumoto, N., Ikegaya, Y. Decoding the language of speech from neural activity of rats. <span class="venue">International Symposium on Artificial Intelligence and Brain Science</span>, Tokyo, e100, October 2020.<span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li>Ouchi, A., <em class="me">Sato, M.</em>, Ikegaya, Y. Hilar mossy cells encode hippocampal ripple information. <span class="venue">Society for Neuroscience 2019</span>, Chicago, 086.01, October 2019.<span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><em class="me">Sato, M.</em>, Matsumoto, N., Ikegaya, Y. Do rat brains discriminate Spanish and English languages? <span class="venue">Society for Neuroscience 2019</span>, Chicago, 4042, October 2019.<span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><em class="me">Sato, M.</em>, Noguchi, A., Gao, M., Ouchi, A., Ikegaya, Y. Classification and regression of in vivo synaptic inputs using deep neural network. <span class="venue">The 5th CiNet Conference</span>, Osaka, 11, February 2019.<span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><em class="me">Sato, M.</em>, Matsumoto, N., Noguchi, A., Okonogi, T., Sasaki, T., Ikegaya, Y. Simultaneous monitoring of intact respiratory signals and membrane potentials of CA1 pyramidal neurons in mice. <span class="venue">Society for Neuroscience 2018</span>, San Diego, 520.16, November 2018.<span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><em class="me">Sato, M.</em>, Matsumoto, N., Noguchi, A., Okonogi, T., Sasaki, T., Ikegaya, Y. A simple method for simultaneous monitoring of respiratory and cardiac function in mice. <span class="venue">18th World Congress of Basic and Clinical Pharmacology</span>, Kyoto, PO4-1-146, July 2018.<span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+  </ul>
+
+  <h3><span data-l="en">Domestic conferences &amp; symposia</span><span data-l="ja">国内学会・シンポジウムにおける発表</span></h3>
+  <ul class="pubs">
+    <li><span data-l="en">Yoshida, A., Komatsu, M., <em class="me">Sato, M.</em>, Sasai, S., Kanai, R. Millisecond-scale dynamic brain networks of whole-cortical ECoG in marmosets. <span class="venue">46th Annual Meeting of the Japan Neuroscience Society</span>, Sendai, C001212, August 2023.</span><span data-l="ja">吉田暁人、小松三佐子、<em class="me">佐藤元重</em>、笹井俊太朗、金井良太、Millisecond-scale dynamic brain networks of whole-cortical ECoG in marmosets、<span class="venue">第46回日本神経科学大会</span>（仙台）、2023年8月、C001212</span><span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Matsumoto, N., Ikegaya, Y. Effects of brain&ndash;AI co-learning on difficult tasks. <span class="venue">143rd Annual Meeting of the Pharmaceutical Society of Japan</span>, Sapporo, 26F2-pm13S, March 2023.</span><span data-l="ja"><em class="me">佐藤元重</em>、松本信圭、池谷裕二、困難課題に対する脳-AI共学習の効果、<span class="venue">日本薬学会第143年会</span>（札幌）、2023年3月26日、26F2-pm13S</span><span class="tag oral"><span data-l="en">Oral</span><span data-l="ja">口頭発表</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Komatsu, M., Sasai, S. Brain mapping of contributions to vocal and behavioral decoding. <span class="venue">45th Annual Meeting of the Japan Neuroscience Society</span>, Okinawa, C001272, June&ndash;July 2022.</span><span data-l="ja"><em class="me">佐藤元重</em>、小松三佐子、笹井俊太朗、Brain mapping of contributions to vocal and behavioral decoding、<span class="venue">第45回日本神経科学大会</span>（沖縄）、2022年6&ndash;7月、C001272</span><span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Matsumoto, N., Ikegaya, Y. Augmentation of auditory discrimination through brain&ndash;AI fusion. <span class="venue">2nd Meeting of &ldquo;Chronogenesis&rdquo;</span>, online, February 2022.</span><span data-l="ja"><em class="me">佐藤元重</em>、松本信圭、池谷裕二、脳-AI融合による聴覚弁別能力の拡張、<span class="venue">「時間生成学」第二回領域会議</span>（オンライン）、2022年2月</span><span class="tag prize"><span data-l="en">Best Poster Award</span><span data-l="ja">ポスター発表優秀賞</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Matsumoto, N., Ikegaya, Y. Toward augmentation of brain function through brain&ndash;AI co-learning. <span class="venue">44th Annual Meeting of the Japan Neuroscience Society</span>, Kobe, C001019, July 2021.</span><span data-l="ja"><em class="me">佐藤元重</em>、松本信圭、池谷裕二、Toward augmentation of brain function through brain-AI co-learning、<span class="venue">第44回日本神経科学大会</span>（神戸）、2021年7月、C001019</span><span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Matsumoto, N., Ikegaya, Y. Decoding human speech from rat neural activity. <span class="venue">140th Annual Meeting of the Pharmaceutical Society of Japan</span>, Kyoto, 27K-am01S, March 2020.</span><span data-l="ja"><em class="me">佐藤元重</em>、松本信圭、池谷裕二、ラット神経活動からの人間の音声言語の復号化、<span class="venue">日本薬学会第140年会</span>（京都）、2020年3月28日、27K-am01S</span><span class="tag oral"><span data-l="en">Oral</span><span data-l="ja">口頭発表</span></span></li>
+    <li><span data-l="en">Ouchi, A., <em class="me">Sato, M.</em>, Ikegaya, Y. Reverse-propagating information dynamics in the hippocampal dentate gyrus local circuit. <span class="venue">93rd Annual Meeting of the Japanese Pharmacological Society</span>, Yokohama, 1-SS-52 / 1-P-012, March 2020.</span><span data-l="ja">大内彩子、<em class="me">佐藤元重</em>、池谷裕二、海馬歯状回局所回路をリバースに伝播する脳情報動態の解明、<span class="venue">第93回日本薬理学会年会</span>（横浜）、2020年3月16日、1-SS-52 / 1-P-012</span><span class="tag oral"><span data-l="en">Oral + Poster</span><span data-l="ja">口頭・ポスター</span></span></li>
+    <li><span data-l="en">Shibata, Y., <em class="me">Sato, M.</em>, Matsumoto, N., Ikegaya, Y. Influence on decoding accuracy of EEG in denoised EMG using machine learning. <span class="venue">93rd Annual Meeting of the Japanese Pharmacological Society</span>, Yokohama, 1-P-135, March 2020.</span><span data-l="ja">柴田裕介、<em class="me">佐藤元重</em>、松本信圭、池谷裕二、Influence on decoding accuracy of EEG in denoised EMG using machine learning、<span class="venue">第93回日本薬理学会年会</span>（横浜）、2020年3月16日、1-P-135</span><span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Matsumoto, N., Ikegaya, Y. Neural decoding of correct answers in indiscriminable auditory tasks. <span class="venue">42nd Annual Meeting of the Japan Neuroscience Society</span>, Niigata, PA-L-552, July 2019.</span><span data-l="ja"><em class="me">佐藤元重</em>、松本信圭、池谷裕二、弁別不可能な聴覚課題における正解の神経デコーディング、<span class="venue">第42回日本神経科学大会</span>（新潟）、2019年7月26日、PA-L-552</span><span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Noguchi, A., Gao, M., Ouchi, A., Ikegaya, Y. Amplitude estimation of neuronal depolarisation using deep learning. <span class="venue">92nd Annual Meeting of the Japanese Pharmacological Society</span>, Osaka, March 2019.</span><span data-l="ja"><em class="me">佐藤元重</em>、野口朝子、高夢璇、大内彩子、池谷裕二、深層学習を用いた神経細胞脱分極の振幅推定、<span class="venue">第92回日本薬理学会年会</span>（大阪）、2019年3月</span><span class="tag oral"><span data-l="en">Oral</span><span data-l="ja">口頭発表</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Noguchi, A., Gao, M., Ouchi, A., Ikegaya, Y. Classification and regression of in vivo membrane potentials using deep learning. <span class="venue">2nd Meeting of &ldquo;Chronogenesis&rdquo;</span>, Ehime, February 2019.</span><span data-l="ja"><em class="me">佐藤元重</em>、野口朝子、高夢璇、大内彩子、池谷裕二、深層学習によるin vivo神経膜電位の分類・回帰、<span class="venue">「時間生成学」第二回領域会議</span>（愛媛）、2019年2月</span><span class="tag prize"><span data-l="en">Poster Encouragement Award</span><span data-l="ja">ポスター発表奨励賞</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Noguchi, A., Gao, M., Ouchi, A., Ikegaya, Y. Amplitude estimation of synaptic inputs using deep learning. <span class="venue">IEICE Neurocomputing Workshop</span>, Hokkaido, 16(NC), January 2019.</span><span data-l="ja"><em class="me">佐藤元重</em>、野口朝子、高夢璇、大内彩子、池谷裕二、深層学習を用いたシナプス入力の振幅推定、<span class="venue">ニューロコンピューティング研究会</span>（北海道）、2019年1月、16(NC)</span><span class="tag oral"><span data-l="en">Oral</span><span data-l="ja">口頭発表</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Noguchi, A., Gao, M., Ouchi, A., Ikegaya, Y. Depolarisation analysis of in vivo membrane potential data from hippocampal CA1 neurons using deep learning. <span class="venue">27th Meeting of the Japanese Society for Hippocampal Research</span>, Tokyo, P10, September 2018.</span><span data-l="ja"><em class="me">佐藤元重</em>、野口朝子、高夢璇、大内彩子、池谷裕二、深層学習による海馬CA1野ニューロンin vivo膜電位データの脱分極解析、<span class="venue">第27回海馬と高次脳機能学会</span>（東京）、2018年9月、P10</span><span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Matsumoto, N., Noguchi, A., Okonogi, T., Sasaki, T., Ikegaya, Y. Simultaneous monitoring of cardiac and respiratory signals with patch-clamp recordings from mouse brains. <span class="venue">41st Annual Meeting of the Japan Neuroscience Society</span>, Kobe, P-079, July 2018.</span><span data-l="ja"><em class="me">佐藤元重</em>、松本信圭、野口朝子、小此木闘也、佐々木拓哉、池谷裕二、Simultaneous monitoring of cardiac and respiratory signals with patch-clamp recordings from mouse brains、<span class="venue">第41回日本神経科学大会</span>（神戸）、2018年7月、P-079</span><span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Matsumoto, N., Noguchi, A., Okonogi, T., Sasaki, T., Ikegaya, Y. A simple method to monitor cardiac and respiratory signals with neurophysiological recording. <span class="venue">Frontiers of Neurointelligence &mdash; JNS 2018 Satellite Symposium</span>, Tokyo, 3, July 2018.</span><span data-l="ja"><em class="me">佐藤元重</em>、松本信圭、野口朝子、小此木闘也、佐々木拓哉、池谷裕二、A simple method to monitor cardiac and respiratory signals with neurophysiological recording、<span class="venue">Frontiers of Neurointelligence（第41回日本神経科学大会サテライトシンポジウム）</span>（東京）、2018年7月、3</span><span class="tag poster"><span data-l="en">Poster</span><span data-l="ja">ポスター</span></span></li>
+    <li><span data-l="en"><em class="me">Sato, M.</em>, Matsumoto, N., Ikegaya, Y. Respiratory rhythms hidden in the electrocardiogram. <span class="venue">137th Kanto Branch Meeting of the Japanese Pharmacological Society</span>, Tokyo, O10-2 (YIA), October 2017.</span><span data-l="ja"><em class="me">佐藤元重</em>、松本信圭、池谷裕二、心電図に潜む呼吸リズム、<span class="venue">第137回日本薬理学会関東部会</span>（東京）、2017年10月、O10-2 (YIA)</span><span class="tag oral"><span data-l="en">Oral</span><span data-l="ja">口頭発表</span></span></li>
+  </ul>
+</section>
+
+<section id="awards" class="wrap">
+  <div class="sec-head">
+    <h2><span data-l="en">Awards &amp; funding</span><span data-l="ja">受賞歴・競争的資金</span></h2>
+  </div>
+
+  <h3><span data-l="en">Awards</span><span data-l="ja">受賞歴</span></h3>
+  <ul class="plain">
+    <li><span class="when">2024.10</span><span class="body" data-l="en"><strong>Nominated among the top 12 projects</strong> at the <a href="https://www.bci-award.com/2024" target="_blank" rel="noopener">BCI Awards 2024</a> &mdash; <em>Large-scale data practicalizes EEG-based speech decoding</em> (Sato, M., Tomeoka, K., Horiguchi, I., Arulkumaran, K., Kanai, R., Sasai, S.)</span><span class="body" data-l="ja"><a href="https://www.bci-award.com/2024" target="_blank" rel="noopener">BCI Awards 2024</a>にて<strong>トップ12研究にノミネート</strong> &mdash; <em>Large-scale data practicalizes EEG-based speech decoding</em>（Sato, M., Tomeoka, K., Horiguchi, I., Arulkumaran, K., Kanai, R., Sasai, S.）</span></li>
+    <li><span class="when">2022.02</span><span class="body" data-l="en"><strong>Best Poster Award</strong>, 2nd Meeting of &ldquo;Chronogenesis&rdquo;</span><span class="body" data-l="ja"><strong>ポスター発表優秀賞</strong>、「時間生成学」第二回領域会議</span></li>
+    <li><span class="when">2019.02</span><span class="body" data-l="en"><strong>Poster Encouragement Award</strong>, &ldquo;Chronogenesis&rdquo; area meeting</span><span class="body" data-l="ja"><strong>ポスター発表奨励賞</strong>、「時間生成学」領域会議</span></li>
+  </ul>
+
+  <h3><span data-l="en">Competitive funding &amp; fellowships</span><span data-l="ja">競争的資金の獲得実績</span></h3>
+  <ul class="plain">
+    <li><span class="when">2020.04 &mdash; 2023.03</span><span class="body" data-l="en"><strong><a href="https://www.jsps.go.jp/english/" target="_blank" rel="noopener">JSPS</a> Research Fellowship for Young Scientists (DC1)</strong> &mdash; &yen;200,000 / month</span><span class="body" data-l="ja"><strong><a href="https://www.jsps.go.jp/" target="_blank" rel="noopener">日本学術振興会</a>特別研究員DC1</strong>に採択（20万円/月）</span></li>
+    <li><span class="when">2019.10 &mdash; 2023.03</span><span class="body" data-l="en"><strong>Nakatani Foundation graduate scholarship</strong> &mdash; &yen;100,000/month (M.S.), &yen;150,000/month (Ph.D.)</span><span class="body" data-l="ja"><strong>中谷医工計測技術振興財団 大学院生奨学金</strong>に採択（修士：10万円/月、博士：15万円/月）</span></li>
+    <li><span class="when">2019.04 &mdash; 2022.03</span><span class="body" data-l="en"><strong>Toyota&ndash;Dwango Advanced AI Talent Scholarship</strong> &mdash; &yen;100,000 / month</span><span class="body" data-l="ja"><strong>トヨタ・ドワンゴ高度人工知能人材奨学金</strong>（10万円/月）</span></li>
+    <li><span class="when">&mdash;</span><span class="body" data-l="en"><strong>JASSO scholarship</strong> &mdash; full repayment exemption (&yen;2,112,000)</span><span class="body" data-l="ja"><strong>日本学生支援機構 奨学金</strong> 全額返還免除（2,112,000円）</span></li>
+  </ul>
+</section>
+
+<section id="outreach" class="wrap">
+  <div class="sec-head">
+    <h2><span data-l="en">Outreach &amp; training</span><span data-l="ja">対外活動</span></h2>
+  </div>
+  <ul class="plain">
+    <li><span class="when">2023.10</span><span class="body" data-l="en">Completed <strong>Matsuo Lab Summer School 2023 &mdash; Large Language Models</strong></span><span class="body" data-l="ja">松尾研究室サマースクール2023「<strong>大規模言語モデル</strong>」を修了</span></li>
+    <li><span class="when">2022.03</span><span class="body" data-l="en">Completed <strong>Matsuo Lab Spring Seminar &mdash; World Models</strong> (project: <a href="https://github.com/yasu-k2/multimodal-active-inference" target="_blank" rel="noopener">multimodal active inference implementation</a>)</span><span class="body" data-l="ja">松尾研究室スプリングセミナー「<strong>世界モデル</strong>」を修了（成果物：<a href="https://github.com/yasu-k2/multimodal-active-inference" target="_blank" rel="noopener">マルチモーダル能動推論の実装</a>）</span></li>
+    <li><span class="when">2021.03</span><span class="body" data-l="en">Organised the <a href="http://brainsci.jp/blog/2021/03/14/%e7%ac%ac13%e5%9b%9e%e8%84%b3%e7%a7%91%e5%ad%a6%e8%8b%a5%e6%89%8b%e3%81%ae%e4%bc%9a-%e6%98%a5%e7%a0%94%e7%a9%b6%e4%bc%9a/" target="_blank" rel="noopener">13th Spring Meeting of the Brain Science Young Researchers' Association</a> and wrote a <a href="https://github.com/Motoshige496/Machine-Learning/tree/main/SPCamp21" target="_blank" rel="noopener">tutorial</a> comparing hierarchical structure in brains and machine learning. Activity report published in the JNNS journal <a href="https://www.jstage.jst.go.jp/article/jnns/28/2/28_103/_pdf/-char/en" target="_blank" rel="noopener">(link)</a></span><span class="body" data-l="ja"><a href="http://brainsci.jp/blog/2021/03/14/%e7%ac%ac13%e5%9b%9e%e8%84%b3%e7%a7%91%e5%ad%a6%e8%8b%a5%e6%89%8b%e3%81%ae%e4%bc%9a-%e6%98%a5%e7%a0%94%e7%a9%b6%e4%bc%9a/" target="_blank" rel="noopener">第13回脳科学若手の会 春の研究会</a>を主催し、脳と機械学習の階層性を生理学的に比較する<a href="https://github.com/Motoshige496/Machine-Learning/tree/main/SPCamp21" target="_blank" rel="noopener">チュートリアル</a>を作成。神経回路学会誌に活動報告を寄稿<a href="https://www.jstage.jst.go.jp/article/jnns/28/2/28_103/_pdf/-char/en" target="_blank" rel="noopener">(link)</a></span></li>
+    <li><span class="when">2021.03</span><span class="body" data-l="en">Completed <strong>Matsuo Lab Spring Seminar &mdash; Reinforcement Learning</strong> (project: <a href="https://scrapbox.io/phoenix20140310-40504414/%E7%A5%9E%E7%B5%8C%E5%9B%9E%E8%B7%AF%E5%88%BA%E6%BF%80%E3%81%AE%E5%88%B6%E5%BE%A1%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3" target="_blank" rel="noopener">simulation for control of neural circuit stimulation</a>)</span><span class="body" data-l="ja">松尾研究室スプリングセミナー「<strong>強化学習</strong>」を修了（成果物：<a href="https://scrapbox.io/phoenix20140310-40504414/%E7%A5%9E%E7%B5%8C%E5%9B%9E%E8%B7%AF%E5%88%BA%E6%BF%80%E3%81%AE%E5%88%B6%E5%BE%A1%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3" target="_blank" rel="noopener">神経回路刺激の制御のためのシミュレーション</a>）</span></li>
+    <li><span class="when">2020.04</span><span class="body" data-l="en">Appointed <strong>President</strong> of the <a href="http://brainsci.jp/" target="_blank" rel="noopener">Brain Science Young Researchers' Association</a></span><span class="body" data-l="ja"><a href="http://brainsci.jp/" target="_blank" rel="noopener">脳科学若手の会</a> <strong>会長</strong>に就任</span></li>
+    <li><span class="when">2020.03</span><span class="body" data-l="en">Attended <strong>Matsuo Lab Spring Seminar &mdash; Deep Generative Models</strong></span><span class="body" data-l="ja">松尾研究室スプリングセミナー「<strong>深層生成モデル</strong>」を受講</span></li>
+    <li><span class="when">2019.11</span><span class="body" data-l="en">Tutor at <a href="http://ascone.brainsci.net/" target="_blank" rel="noopener">ASCONE 2019 &ldquo;The Future of Brain Science and Mathematics&rdquo;</a>, JNNS Autumn School</span><span class="body" data-l="ja">日本神経回路学会オータムスクール <a href="http://ascone.brainsci.net/" target="_blank" rel="noopener">ASCONE2019『脳科学と数理の未来』</a>にチューターとして参加</span></li>
+    <li><span class="when">2019.07</span><span class="body" data-l="en">Passed <strong>JDLA Deep Learning for GENERAL 2019#2</strong> (G-test)</span><span class="body" data-l="ja"><strong>JDLA Deep Learning for GENERAL 2019#2</strong>（ディープラーニング G検定）合格</span></li>
+    <li><span class="when">2019.06</span><span class="body" data-l="en">Joined <a href="https://kernel.deepcore.jp/" target="_blank" rel="noopener">KERNEL HONGO</a>, an AI-focused incubation hub</span><span class="body" data-l="ja">AI特化型インキュベーション拠点<a href="https://kernel.deepcore.jp/" target="_blank" rel="noopener">KERNEL HONGO</a>に入会</span></li>
+    <li><span class="when">2019.03</span><span class="body" data-l="en">Ran the <a href="http://brainsci.jp/blog/2019/03/16/%E7%AC%AC11%E5%9B%9E%E8%84%B3%E7%A7%91%E5%AD%A6%E8%8B%A5%E6%89%8B%E3%81%AE%E4%BC%9A-%E6%98%A5%E5%90%88%E5%AE%BF/" target="_blank" rel="noopener">11th Camp of the Brain Science Young Researchers' Association</a>; activity report published in the JNNS journal <a href="https://www.jstage.jst.go.jp/article/jnns/26/3/26_105/_pdf" target="_blank" rel="noopener">(link)</a></span><span class="body" data-l="ja"><a href="http://brainsci.jp/blog/2019/03/16/%E7%AC%AC11%E5%9B%9E%E8%84%B3%E7%A7%91%E5%AD%A6%E8%8B%A5%E6%89%8B%E3%81%AE%E4%BC%9A-%E6%98%A5%E5%90%88%E5%AE%BF/" target="_blank" rel="noopener">脳科学若手の会第11回合宿</a>を運営。神経回路学会誌に活動報告を寄稿<a href="https://www.jstage.jst.go.jp/article/jnns/26/3/26_105/_pdf" target="_blank" rel="noopener">(link)</a></span></li>
+    <li><span class="when">2018.06</span><span class="body" data-l="en">Participated in the <strong>Tamagawa University Brain Science Training Course 2018</strong></span><span class="body" data-l="ja"><strong>玉川大学脳科学トレーニングコース2018</strong>に参加</span></li>
+    <li><span class="when">2018.01 &mdash; 03</span><span class="body" data-l="en">Member of the first cohort of <strong>Niconico AI School</strong></span><span class="body" data-l="ja"><strong>ニコニコAIスクール</strong>の第一期生として参加</span></li>
+    <li><span class="when">2016.08</span><span class="body" data-l="en">Short-term study abroad at the <strong>University of Sheffield</strong></span><span class="body" data-l="ja"><strong>シェフィールド大学</strong>へ短期留学</span></li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <span>&copy; <span id="yr">2026</span> Motoshige Sato &middot; 佐藤元重</span>
+  <a class="totop" href="#top"><span data-l="en">Back to top &uarr;</span><span data-l="ja">ページ上部へ &uarr;</span></a>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var btns=[].slice.call(document.querySelectorAll('[data-setlang]'));
+  function setLang(l,persist){
+    root.setAttribute('data-lang',l);
+    root.setAttribute('lang',l==='ja'?'ja':'en');
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-setlang')===l));});
+    if(persist){try{localStorage.setItem('lang',l);}catch(e){}}
+  }
+  var saved=null;
+  try{saved=localStorage.getItem('lang');}catch(e){}
+  if(saved!=='en'&&saved!=='ja'){
+    var m=/[?&]lang=(en|ja)/.exec(location.search);
+    saved=m?m[1]:'en';
+  }
+  setLang(saved,false);
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.getAttribute('data-setlang'),true);});
+  });
+
+  var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
+
+  var links=[].slice.call(document.querySelectorAll('#nav a'));
+  var map={};
+  links.forEach(function(a){
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(el) map[el.id]=a;
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var a=map[en.target.id]; if(!a) return;
+        if(en.isIntersecting){
+          links.forEach(function(l){l.classList.remove('active');});
+          a.classList.add('active');
+        }
+      });
+    },{rootMargin:'-70px 0px -70% 0px',threshold:0});
+    Object.keys(map).forEach(function(id){io.observe(document.getElementById(id));});
+  }
+})();
+</script>
+</body>
+</html>
